@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cam1t6cmbijm5"]
+
+[ext_resource type="Script" uid="uid://cd5lmvsnymsmh" path="res://book.gd" id="1_qt4ye"]
+[ext_resource type="Texture2D" uid="uid://c6xcsb6o41br6" path="res://Asset/book_normal.png" id="2_j6i6v"]
+[ext_resource type="Texture2D" uid="uid://cxs7618bfvjp3" path="res://Asset/book_press.png" id="3_a721i"]
+[ext_resource type="Texture2D" uid="uid://breatkfj3734b" path="res://Asset/book_hover.png" id="4_bhljv"]
+
+[node name="Book" type="Control"]
+custom_minimum_size = Vector2(185, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1255.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt4ye")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_j6i6v")
+texture_pressed = ExtResource("3_a721i")
+texture_hover = ExtResource("4_bhljv")

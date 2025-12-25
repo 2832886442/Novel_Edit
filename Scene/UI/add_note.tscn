@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccwh8g56w7fje"]
+
+[ext_resource type="Script" uid="uid://2tqkevmn8l84" path="res://Script/UI/add_note.gd" id="1_hhlaw"]
+[ext_resource type="LabelSettings" uid="uid://detp57nvuai7j" path="res://Asset/Theme/LittleTitle.tres" id="2_uycf7"]
+
+[node name="AddNote" type="Control"]
+custom_minimum_size = Vector2(1232, 788)
+layout_mode = 3
+anchor_right = 0.856
+anchor_bottom = 0.876
+offset_right = -0.640137
+offset_bottom = -0.400024
+script = ExtResource("1_hhlaw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "笔记"
+label_settings = ExtResource("2_uycf7")
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "输入标题"
+
+[node name="AddLine" type="Button" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "添加大纲"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Sidebar" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="SaveBtn" type="Button" parent="HBoxContainer/Sidebar"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "保存"
+
+[node name="CancelBtn" type="Button" parent="HBoxContainer/Sidebar"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "取消"

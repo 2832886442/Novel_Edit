@@ -1,0 +1,237 @@
+[gd_scene load_steps=8 format=3 uid="uid://b70nx6c1gr7yn"]
+
+[ext_resource type="Script" uid="uid://vpiu6coaw4cw" path="res://Script/UI/tab_container.gd" id="1_4qp42"]
+[ext_resource type="Texture2D" uid="uid://d1hut461rthyn" path="res://Asset/hover.png" id="1_uq8t2"]
+[ext_resource type="Texture2D" uid="uid://b3sxqqr08c1ca" path="res://Asset/normal.png" id="2_lhtkd"]
+[ext_resource type="Texture2D" uid="uid://5xf6r0tr3wmn" path="res://Asset/press.png" id="3_hvmjk"]
+[ext_resource type="Theme" uid="uid://kfvpffkoekyw" path="res://Asset/Theme/btnlabel.tres" id="4_lhtkd"]
+[ext_resource type="LabelSettings" uid="uid://detp57nvuai7j" path="res://Asset/Theme/LittleTitle.tres" id="6_hvmjk"]
+[ext_resource type="PackedScene" uid="uid://ccwh8g56w7fje" path="res://Scene/UI/add_note.tscn" id="7_w24gn"]
+
+[node name="UserControl" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_horizontal_guides_ = [103.0]
+
+[node name="SearchContainer" type="AspectRatioContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+ratio = 10.0
+
+[node name="LineEdit" type="LineEdit" parent="SearchContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "查询"
+
+[node name="UserInterface" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sidebar" type="VBoxContainer" parent="UserInterface"]
+custom_minimum_size = Vector2(192.885, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="NoteBtn" type="TextureButton" parent="UserInterface/Sidebar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture_normal = ExtResource("2_lhtkd")
+texture_pressed = ExtResource("3_hvmjk")
+texture_hover = ExtResource("1_uq8t2")
+
+[node name="Label" type="Label" parent="UserInterface/Sidebar/NoteBtn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -11.5
+offset_right = 16.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_lhtkd")
+text = "笔记"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreationBtn" type="TextureButton" parent="UserInterface/Sidebar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture_normal = ExtResource("2_lhtkd")
+texture_pressed = ExtResource("3_hvmjk")
+texture_hover = ExtResource("1_uq8t2")
+
+[node name="Label" type="Label" parent="UserInterface/Sidebar/CreationBtn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -11.5
+offset_right = 16.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_lhtkd")
+text = "创作"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterBtn" type="TextureButton" parent="UserInterface/Sidebar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture_normal = ExtResource("2_lhtkd")
+texture_pressed = ExtResource("3_hvmjk")
+texture_hover = ExtResource("1_uq8t2")
+
+[node name="Label" type="Label" parent="UserInterface/Sidebar/CharacterBtn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -11.5
+offset_right = 16.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_lhtkd")
+text = "人物"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="UserInterface"]
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="UserInterface/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99
+anchor_bottom = 0.99
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+current_tab = 0
+tabs_visible = false
+script = ExtResource("1_4qp42")
+
+[node name="Note" type="Control" parent="UserInterface/Control/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="UserInterface/Control/TabContainer/Note"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "笔记"
+label_settings = ExtResource("6_hvmjk")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UserInterface/Control/TabContainer/Note"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+offset_right = 0.439941
+offset_bottom = 0.460022
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="UserInterface/Control/TabContainer/Note/ScrollContainer"]
+custom_minimum_size = Vector2(1232, 788)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 6
+
+[node name="Creation" type="Control" parent="UserInterface/Control/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="UserInterface/Control/TabContainer/Creation"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "创意"
+label_settings = ExtResource("6_hvmjk")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UserInterface/Control/TabContainer/Creation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+offset_right = 0.439941
+offset_bottom = 0.460022
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="UserInterface/Control/TabContainer/Creation/ScrollContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="Character" type="Control" parent="UserInterface/Control/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="UserInterface/Control/TabContainer/Character"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "人物"
+label_settings = ExtResource("6_hvmjk")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UserInterface/Control/TabContainer/Character"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+offset_right = 0.439941
+offset_bottom = 0.460022
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="UserInterface/Control/TabContainer/Character/ScrollContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="AddNote" parent="UserInterface/Control/TabContainer" groups=["AddSomething"] instance=ExtResource("7_w24gn")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3

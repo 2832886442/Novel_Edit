@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://daljekamj0wsm"]
+
+[ext_resource type="Script" uid="uid://durr2tkjbnukn" path="res://Script/model/add_something.gd" id="1_8fp27"]
+[ext_resource type="Texture2D" uid="uid://oahkvy5or0s0" path="res://Asset/pos.png" id="2_aqb3y"]
+[ext_resource type="Texture2D" uid="uid://gs7cf8vlibjy" path="res://Asset/poshover.png" id="3_yy805"]
+
+[node name="AddSomething" type="Control" groups=["AddBtn"]]
+custom_minimum_size = Vector2(185, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 185.0
+offset_bottom = 300.0
+script = ExtResource("1_8fp27")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(185, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_aqb3y")
+texture_hover = ExtResource("3_yy805")

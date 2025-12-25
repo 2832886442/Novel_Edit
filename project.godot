@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="文本编辑器"
+run/main_scene="uid://c7ba6shkfx65m"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.png"
+
+[autoload]
+
+FileStream="*res://Autoload/FileStream.gd"
+StatusManager="*res://Autoload/StatusManager.gd"
+
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=900
+
+[global_group]
+
+Outline=""
+AddBtn=""
+
+[godot_hub]
+
+godot_hub/create_time="2025-12-23 20:56:06.279685"
+godot_hub/engine/version="4.4.1-stable"
+godot_hub/open_time="2025-12-23 20:56:06.279685"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
